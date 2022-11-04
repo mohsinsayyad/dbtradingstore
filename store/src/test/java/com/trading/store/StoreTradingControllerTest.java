@@ -23,8 +23,8 @@ import org.springframework.test.web.servlet.ResultActions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.trading.store.controller.TradingStoreController;
 import com.trading.store.model.TradingStoreEntity;
+import com.trading.store.repository.TradingStoreRepository;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(StoreTradingControllerTest.class)
 public class StoreTradingControllerTest {
 
@@ -36,6 +36,9 @@ public class StoreTradingControllerTest {
 
 	@MockBean
 	private TradingStoreController tradingStoreController;
+	
+	@MockBean
+	TradingStoreRepository storeRepository;
 
 	@Test
 	public void addTradingStore() throws Exception {
